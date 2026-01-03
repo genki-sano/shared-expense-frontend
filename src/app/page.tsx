@@ -2,8 +2,8 @@
 
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useLiff } from './LiffProvider'
-import styles from '@/styles/Home.module.css'
+import { useLiff } from './_lib/LiffProvider'
+import styles from './_styles/Home.module.css'
 
 const Home: NextPage = () => {
   const { liff, error } = useLiff()
