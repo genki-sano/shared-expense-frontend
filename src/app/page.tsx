@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import styles from '@/styles/Home.module.css';
-import { useLiff } from './LiffProvider';
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import { useLiff } from './LiffProvider'
+import styles from '@/styles/Home.module.css'
 
 const Home: NextPage = () => {
-  const { liff, error } = useLiff();
+  const { liff, error } = useLiff()
   return (
     <div>
       <Head>
         <title>LIFF App</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main className={styles.main}>
@@ -26,12 +26,12 @@ const Home: NextPage = () => {
             </p>
           </>
         )}
-        <a href="https://developers.line.biz/ja/docs/liff/" target="_blank" rel="noreferrer">
+        <a href='https://developers.line.biz/ja/docs/liff/' target='_blank' rel='noreferrer'>
           LIFF Documentation
         </a>
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

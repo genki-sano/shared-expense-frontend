@@ -1,17 +1,17 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
-import type { Liff } from '@line/liff';
-import { createContext, useContext } from 'react';
+import type { Liff } from '@line/liff'
+import { useEffect, useState } from 'react'
+import { createContext, useContext } from 'react'
 
 const LiffContext = createContext<{
-  liff: Liff | null;
-  error: string | null;
-}>({ liff: null, error: null });
+  liff: Liff | null
+  error: string | null
+}>({ liff: null, error: null })
 
 export function LiffProvider({ children }: { children: React.ReactNode }) {
-  const [liff, setLiff] = useState<Liff | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [liff, setLiff] = useState<Liff | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
   // Execute liff.init() when the app is initialized
   useEffect(() => {
@@ -22,13 +22,13 @@ export function LiffProvider({ children }: { children: React.ReactNode }) {
         liff
           .init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID! })
           .then(() => setLiff(liff))
-          .catch((e) => setError(e.toString()));
-      });
-  }, []);
+          .catch((e) => setError(e.toString()))
+      })
+  }, [])
 
   // Provide `liff` object and `liffError` object
   // to page component as property
-  return <LiffContext.Provider value={{ liff, error }}>{children}</LiffContext.Provider>;
+  return <LiffContext.Provider value={{ liff, error }}>{children}</LiffContext.Provider>
 }
 
-export const useLiff = () => useContext(LiffContext);
+export const useLiff = () => useContext(LiffContext)
