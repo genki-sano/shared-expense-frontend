@@ -1,22 +1,105 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #fff;
-  --foreground: #171717;
+  --background: var(--color-white);
+  --foreground: var(--color-neutral-950);
+
+  /* color-body */
+  --body: var(--color-gray-600);
+  --body-subtle: var(--color-gray-500);
+
+  /* color-neutral */
+  --neutral-primary-soft: var(--color-white);
+  --neutral-primary: var(--color-white);
+  --neutral-primary-medium: var(--color-white);
+  --neutral-primary-strong: var(--color-white);
+  --neutral-secondary-soft: var(--color-gray-50);
+  --neutral-secondary: var(--color-gray-50);
+  --neutral-secondary-medium: var(--color-gray-50);
+  --neutral-secondary-strong: var(--color-gray-50);
+
+  /* color-default */
+  --default-subtle: var(--color-gray-200);
+  --default: var(--color-gray-200);
+  --default-medium: var(--color-gray-200);
+  --default-strong: var(--color-gray-200);
+
+  /* color-brand */
+  --brand-softer: var(--color-green-50);
+  --brand-soft: var(--color-green-100);
+  --brand: var(--color-green-700);
+  --brand-medium: var(--color-green-200);
+  --brand-strong: var(--color-green-800);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-gray-950);
+    --foreground: var(--color-neutral-50);
+
+    /* color-body */
+    --body: var(--color-gray-400);
+    --body-subtle: var(--color-gray-400);
+
+    /* color-neutral */
+    --neutral-primary-soft: var(--color-gray-900);
+    --neutral-primary: var(--color-gray-950);
+    --neutral-primary-medium: var(--color-gray-800);
+    --neutral-primary-strong: var(--color-gray-700);
+    --neutral-secondary-soft: var(--color-gray-900);
+    --neutral-secondary: var(--color-gray-950);
+    --neutral-secondary-medium: var(--color-gray-800);
+    --neutral-secondary-strong: var(--color-gray-700);
+
+    /* color-default */
+    --default-subtle: var(--color-gray-900);
+    --default: var(--color-gray-800);
+    --default-medium: var(--color-gray-700);
+    --default-strong: var(--color-gray-600);
+
+    /* color-brand */
+    --brand-softer: var(--color-green-950);
+    --brand-soft: var(--color-green-900);
+    --brand: var(--color-green-600);
+    --brand-medium: var(--color-green-900);
+    --brand-strong: var(--color-green-700);
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* color-body */
+  --color-body: var(--body);
+  --color-body-subtle: var(--body-subtle);
+
+  /* color-neutral */
+  --color-neutral-primary-soft: var(--neutral-primary-soft);
+  --color-neutral-primary: var(--neutral-primary);
+  --color-neutral-primary-medium: var(--neutral-primary-medium);
+  --color-neutral-primary-strong: var(--neutral-primary-strong);
+  --color-neutral-secondary-soft: var(--neutral-secondary-soft);
+  --color-neutral-secondary: var(--neutral-secondary);
+  --color-neutral-secondary-medium: var(--neutral-secondary-medium);
+  --color-neutral-secondary-strong: var(--neutral-secondary-strong);
+
+  /* color-default */
+  --color-default-subtle: var(--default-subtle);
+  --color-default: var(--default);
+  --color-default-medium: var(--default-medium);
+  --color-default-strong: var(--default-strong);
+
+  /* color-brand */
+  --color-brand-softer: var(--brand-softer);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand: var(--brand);
+  --color-brand-medium: var(--brand-medium);
+  --color-brand-strong: var(--brand-strong);
+
+  /* font */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

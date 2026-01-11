@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang='ja'>
       <LiffProvider>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
       </LiffProvider>
